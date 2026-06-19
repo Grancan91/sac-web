@@ -8,10 +8,6 @@ node_modules/
 
 # Next.js
 /.next/
-/out_build/
-
-# Production
-/build
 
 # Misc
 .DS_Store
