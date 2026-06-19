@@ -1,0 +1,9 @@
+{
+  "/contacto/page": "app/contacto/page.js",
+  "/soluciones/page": "app/soluciones/page.js",
+  "/productos/page": "app/productos/page.js",
+  "/precios/page": "app/precios/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/casos-de-exito/page": "app/casos-de-exito/page.js",
+  "/sobre-nosotros/page": "app/sobre-nosotros/page.js"
+}

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body:    'Source Sans 3', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: #4a4a4a;
+    background-color: #f7f7f8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-wrap: balance;
+    color: #001738;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  /* Contenedor principal */
+  .sac-container {
+    @apply mx-auto w-full max-w-container px-6;
+  }
+
+  /* Overline SAC */
+  .sac-overline {
+    @apply inline-block text-xs font-bold uppercase tracking-widest text-green-500;
+  }
+
+  /* Gradiente hero */
+  .sac-hero-gradient {
+    background: linear-gradient(180deg, #eef3fb 0%, #ffffff 100%);
+  }
+
+  /* Sección azul de marca */
+  .sac-section-brand {
+    background-color: #00296f;
+  }
+
+  /* Card estándar SAC */
+  .sac-card {
+    @apply rounded-md bg-white shadow-sm border border-gray-200 p-6 transition-all duration-200;
+  }
+  .sac-card:hover {
+    @apply shadow-md -translate-y-0.5;
+  }
+
+  /* Focus ring */
+  *:focus-visible {
+    outline: 2px solid #1b4ea3;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .tracking-caps {
+    letter-spacing: 0.08em;
+  }
+  /* Animación con delay */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
