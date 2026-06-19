@@ -7,7 +7,9 @@
       "Bash(git init *)",
       "Bash(git config *)",
       "Bash(git add *)",
-      "Bash(git commit -m 'Initial commit - SAC Web project *)"
+      "Bash(git commit -m 'Initial commit - SAC Web project *)",
+      "Bash(brew install *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
