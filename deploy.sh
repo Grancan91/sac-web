@@ -17,12 +17,15 @@ echo -e "${BLUE}📦 Compilando proyecto...${NC}"
 npm run build
 echo -e "${GREEN}✓ Build completado${NC}"
 
-# 2. Obtener ruta de sac-web-prod
-PROD_REPO_PATH="${SAC_WEB_PROD_PATH:-../sac-web-prod}"
+# 2. Obtener ruta de sac-web-prod (hermano en la misma carpeta)
+PROD_REPO_PATH="../sac-web-prod"
 
 if [ ! -d "$PROD_REPO_PATH/.git" ]; then
-  echo -e "${YELLOW}⚠️  Repositorio de producción no encontrado en: $PROD_REPO_PATH${NC}"
-  echo -e "${YELLOW}   Usa: export SAC_WEB_PROD_PATH=/ruta/a/sac-web-prod${NC}"
+  echo -e "${YELLOW}❌ Error: No encontré sac-web-prod en $PROD_REPO_PATH${NC}"
+  echo -e "${YELLOW}   Asegúrate de que ambos repos estén en la misma carpeta:${NC}"
+  echo -e "${YELLOW}   📁 Claude/Projects/SAC/${NC}"
+  echo -e "${YELLOW}      ├── sac-web/${NC}"
+  echo -e "${YELLOW}      └── sac-web-prod/${NC}"
   exit 1
 fi
 

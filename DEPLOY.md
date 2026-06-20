@@ -7,22 +7,25 @@ Este proyecto tiene dos repositorios:
 
 ## Flujo de Desarrollo → Producción
 
-### Opción 1: Deploy Automático (Recomendado)
+### Estructura de carpetas
+
+```
+📁 SAC/
+  ├── sac-web/          ← Código fuente (estás aquí)
+  └── sac-web-prod/     ← Archivos compilados
+```
+
+### Deploy Automático (Recomendado)
+
+Desde dentro de `sac-web`:
 
 ```bash
-# Configurar la ruta una sola vez
-export SAC_WEB_PROD_PATH=~/Documents/Claude/Projects/SAC/sac-web-prod
-
-# O en tu .zshrc/.bashrc para que sea permanente:
-# echo 'export SAC_WEB_PROD_PATH=~/Documents/Claude/Projects/SAC/sac-web-prod' >> ~/.zshrc
-
-# Ejecutar el deploy
 ./deploy.sh
 ```
 
 El script automáticamente:
 1. ✅ Compila el proyecto (`npm run build`)
-2. ✅ Copia archivos a `sac-web-prod`
+2. ✅ Copia archivos a `../sac-web-prod`
 3. ✅ Hace commit y push automático
 
 ### Opción 2: Deploy Manual
@@ -54,14 +57,19 @@ En **Hostalia**:
 
 ## Primeros pasos
 
-1. **Clonar sac-web-prod localmente:**
+1. **Clona ambos repos en la misma carpeta:**
    ```bash
-   git clone git@github.com:Grancan91/sac-web-prod.git ../sac-web-prod
+   cd ~/Documents/Claude/Projects/SAC/
+   git clone git@github.com:Grancan91/sac-web.git
+   git clone git@github.com:Grancan91/sac-web-prod.git
    ```
 
-2. **Configurar la ruta en tu shell:**
+2. **Ahora puedes usar `./deploy.sh` para cada release:**
    ```bash
-   export SAC_WEB_PROD_PATH=../sac-web-prod
+   cd sac-web
+   ./deploy.sh
    ```
 
-3. **Ahora puedes usar `./deploy.sh` para cada release**
+3. **Luego en Hostalia:**
+   - Pull ahora
+   - Desplegar ahora
